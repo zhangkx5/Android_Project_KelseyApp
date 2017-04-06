@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.kaixin.kelseyapp.bean.NewsBean;
+
 import java.util.List;
 
 /**
@@ -23,7 +25,7 @@ public class NewsAdapter extends BaseAdapter{
         minflater = LayoutInflater.from(context);
     }
     @Override
-    public Object getItem(int position) {
+    public NewsBean getItem(int position) {
         return mlist.get(position);
     }
     @Override
@@ -36,7 +38,7 @@ public class NewsAdapter extends BaseAdapter{
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder viewHolder= null;
+        ViewHolder viewHolder;
         if (convertView == null){
             viewHolder = new ViewHolder();
             convertView = minflater.inflate(R.layout.item_news,null);
@@ -47,13 +49,12 @@ public class NewsAdapter extends BaseAdapter{
         }else{
             viewHolder = (ViewHolder)convertView.getTag();
         }
-        //viewHolder.iconimage.setBackgroundResource(R.mipmap.ic_launcher);
-        viewHolder.title.setText(mlist.get(position).newsTitle);
-        viewHolder.content.setText(mlist.get(position).newsContnent);
+        viewHolder.title.setText(mlist.get(position).getNewsTitle());
+        viewHolder.content.setText(mlist.get(position).getNewsSource());
         //通过setTag方法让iv上存储当前图片的下载网址
-        viewHolder.iconimage.setTag(mlist.get(position).newsIconUrl);
+        viewHolder.iconimage.setTag(mlist.get(position).getTopImg());
         viewHolder.iconimage.setImageResource(R.mipmap.ic_launcher);
-        new ImageTask(viewHolder.iconimage, mlist.get(position).newsIconUrl).execute(mlist.get(position).newsIconUrl);
+        new ImageTask(viewHolder.iconimage, mlist.get(position).getTopImg()).execute(mlist.get(position).getTopImg());
 
         return convertView;
     }

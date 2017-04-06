@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/diary_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="diary_content"
+        android:textSize="20sp"
+        android:maxHeight="30dp"
+        android:lineSpacingMultiplier="5"
+        android:textColor="#000000"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/diary_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="diary_time:2017.03.29"
+            android:textColor="#000000"
+            android:maxWidth="115dp"
+            android:maxHeight="20dp"
+            android:lineSpacingMultiplier="5"
+            android:layout_marginRight="5dp"/>
+
+        <TextView
+            android:id="@+id/diary_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:textColor="#000000"
+            android:text="city"/>
+
+        <TextView
+            android:id="@+id/diary_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="weather"/>
+    </LinearLayout>
+
+</LinearLayout>
